@@ -9,21 +9,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2691cad064b17c249a71a67b4637480a, type: 3}
+  m_Script: {fileID: 0}
   m_Name: Stocks
-  m_EditorClassIdentifier: 
-  StockInt:
+  m_EditorClassIdentifier: Assembly-CSharp::Stock
+  Stocks:
   - stockName: SamSung
-    stockNumber: 1
+    stockNumber: 0
     startPrice: 30000
     endPrice: 20000
     increacePricePercent: 60
     increaceWidth: 20
-    decreaceWidth: 40
+    decreaceWidth: 30
   - stockName: LG
+    stockNumber: 1
+    startPrice: 20000
+    endPrice: 10000
+    increacePricePercent: 40
+    increaceWidth: 40
+    decreaceWidth: 30
+  - stockName: KB
     stockNumber: 2
-    startPrice: 10000
-    endPrice: 7000
-    increacePricePercent: 50
-    increaceWidth: 30
-    decreaceWidth: 20
+    startPrice: 50000
+    endPrice: 20000
+    increacePricePercent: 70
+    increaceWidth: 20
+    decreaceWidth: 40
