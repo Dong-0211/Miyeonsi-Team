@@ -30,7 +30,7 @@ MonoBehaviour:
   - stockName: KB
     stockNumber: 2
     startPrice: 50000
-    endPrice: 20000
+    endPrice: 30000
     increacePricePercent: 70
     increaceWidth: 20
     decreaceWidth: 40
