@@ -56,4 +56,9 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.LoadScene("TitleScenes");
     }
+
+    public void StoryScenesMove()
+    {
+        SceneManager.LoadScene("Story_Scene");
+    }
 }

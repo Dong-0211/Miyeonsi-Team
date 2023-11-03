@@ -8,7 +8,7 @@ public class ManagerStock
     [SerializeField] public string stockName;
     [SerializeField] public int stockNumber;
     [SerializeField] public int startPrice;
-    [SerializeField] public float endPrice;
+    [SerializeField] public int endPrice;
     [SerializeField] public float increacePricePercent;
     [SerializeField] public int increaceWidth;
     [SerializeField] public int decreaceWidth;
