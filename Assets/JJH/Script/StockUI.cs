@@ -38,14 +38,21 @@ public class StockUI : MonoBehaviour
     public void ChangePrice()
     {
         int result = 0;
+        int range = Random.Range(0, 100);
         //주가 상승 확률을 계산해서 상승 시 얼만큼 오르는지 하락시 얼만큼 떨어지는지 계산
-        if(Random.Range(0,100) < stock.Stocks[stockNumber].increacePricePercent)
+        if (range < stock.Stocks[stockNumber].increacePricePercent)
         {
             result = current * Random.Range(0, stock.Stocks[stockNumber].increaceWidth) / 100;
         }
-        else if (Random.Range(0, 100) > stock.Stocks[stockNumber].increacePricePercent)
+        else if (range > stock.Stocks[stockNumber].increacePricePercent)
         {
             result = - current * Random.Range(0, stock.Stocks[stockNumber].decreaceWidth) / 100;
+            if (current + result < stock.Stocks[stockNumber].endPrice)
+            {
+                current = stock.Stocks[stockNumber].endPrice;
+                ChangeUi(result);
+                return;
+            }
         }
         current += result;
 
@@ -56,15 +63,15 @@ public class StockUI : MonoBehaviour
     {
         stockName.text = stock.Stocks[stockNumber].stockName;
         currentPrice.text = current.ToString();
-        if(result > 0)
+        if(result < 0)
         {
-            stockPercent.color = new Color(59.0f, 62.0f, 255.0f);
             stockPercent.text = result.ToString();
+            stockPercent.color = Color.blue;
         }
-        else if (result < 0)
+        else if (result > 0)
         {
-            stockPercent.color = new Color(255.0f, 62.0f, 35.0f);
             stockPercent.text = result.ToString();
+            stockPercent.color = Color.red;
         }
         //여기까지
         myPrice.text = stock.Stocks[stockNumber].stockName;
