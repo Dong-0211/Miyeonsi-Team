@@ -20,17 +20,20 @@ MonoBehaviour:
     increacePricePercent: 60
     increaceWidth: 20
     decreaceWidth: 30
-  - stockName: LG
+    holdingValue: 0
+  - stockName: NC
     stockNumber: 1
-    startPrice: 20000
-    endPrice: 10000
+    startPrice: 50000
+    endPrice: 30000
     increacePricePercent: 40
     increaceWidth: 40
     decreaceWidth: 30
-  - stockName: KB
+    holdingValue: 0
+  - stockName: CJ
     stockNumber: 2
-    startPrice: 50000
-    endPrice: 30000
-    increacePricePercent: 70
-    increaceWidth: 20
-    decreaceWidth: 40
+    startPrice: 40000
+    endPrice: 20000
+    increacePricePercent: 30
+    increaceWidth: 50
+    decreaceWidth: 20
+    holdingValue: 0

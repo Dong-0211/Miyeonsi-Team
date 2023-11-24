@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class StockUI : MonoBehaviour
 {
-    public Stock stock;
+    Stock stock;
+    PlayerMoney player;
     public int stockNumber;
 
     public Image StockLog;
@@ -15,15 +16,24 @@ public class StockUI : MonoBehaviour
     public Text myPrice;
     public Text myPercent;
     public Text sum;
+    public Text holdingStocks;
 
     private int current;
+    private float myAveragePrice;
+    private float sumPrice;
+    private float sumPercent;
 
-    
+    private void Awake()
+    {
+        stock = Resources.Load<Stock>("ScriptableObject/Stocks");
+        player = FindObjectOfType<PlayerMoney>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         current = stock.Stocks[stockNumber].startPrice;
-        //stock = FindObjectOfType<Stock>();
+        ChangePrice();
     }
 
     void Update()
@@ -74,8 +84,64 @@ public class StockUI : MonoBehaviour
             stockPercent.color = Color.red;
         }
         //여기까지
-        myPrice.text = stock.Stocks[stockNumber].stockName;
-        myPercent.text = stock.Stocks[stockNumber].stockName;
-        sum.text = stock.Stocks[stockNumber].stockName;
+        ChangeMyUi();
+    }
+
+    public void ChangeMyUi()
+    {
+        sumPercent = CalculationPercent();
+        sumPrice = CalculationSum();
+
+        holdingStocks.text = stock.Stocks[stockNumber].holdingValue.ToString();
+        myPrice.text = myAveragePrice.ToString();
+        myPercent.text = sumPercent.ToString();
+        sum.text = sumPrice.ToString();
+    }
+
+    public void Buy()
+    {
+        if(player.Money > current)
+        {
+            player.Money = player.Money - current;
+            stock.Stocks[stockNumber].holdingValue++;
+            myAveragePrice = CalculationAverage();
+            
+            sumPercent = CalculationPercent();
+            ChangeMyUi();
+        }
+    }
+
+    public float CalculationAverage()
+    {
+        float result = 0;
+        if (stock.Stocks[stockNumber].holdingValue == 0) return 0;
+        result = (myAveragePrice * (stock.Stocks[stockNumber].holdingValue -1) + current) / (stock.Stocks[stockNumber].holdingValue);
+        return result;
+    }
+
+    public float CalculationPercent()
+    {
+        if(myAveragePrice == 0) return 0;
+        return (current - myAveragePrice) / myAveragePrice * 100;
+    }
+
+    public float CalculationSum()
+    {
+        return current * stock.Stocks[stockNumber].holdingValue;
+    }
+
+    public void Sell()
+    {
+        if(stock.Stocks[stockNumber].holdingValue > 0)
+        {
+            player.Money += current;
+            --stock.Stocks[stockNumber].holdingValue;
+            if (stock.Stocks[stockNumber].holdingValue == 0)
+            {
+                myAveragePrice = CalculationAverage();
+                sumPercent = CalculationPercent();
+            }
+            ChangeMyUi();
+        }
     }
 }
