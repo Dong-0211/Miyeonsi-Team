@@ -825,6 +825,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1062865331}
     m_Modifications:
+    - target: {fileID: 13995711496686666, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13995711496686666, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13995711496686666, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1315421537}
+    - target: {fileID: 13995711496686666, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 13995711496686666, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Buy
+      objectReference: {fileID: 0}
+    - target: {fileID: 13995711496686666, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StockUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 13995711496686666, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1064305014343672057, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -916,6 +944,34 @@ PrefabInstance:
     - target: {fileID: 1180837201133339667, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754271694122216178, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754271694122216178, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754271694122216178, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1315421537}
+    - target: {fileID: 4754271694122216178, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754271694122216178, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Sell
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754271694122216178, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StockUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754271694122216178, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5962371534639103531, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
       propertyPath: stockNumber
@@ -1048,18 +1104,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6932a1e3a31d7454195b7eadb2da94fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 0
+  money: 500000
   currentMoney: {fileID: 1526636971}
 --- !u!224 &1315421536 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1064305014343672057, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
   m_PrefabInstance: {fileID: 1206944332}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1315421537 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5962371534639103531, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+  m_PrefabInstance: {fileID: 1206944332}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad8dafd9ceb55134a974c46b2edab457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1404678959 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1064305014343672057, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
   m_PrefabInstance: {fileID: 2121962513}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1442266896 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5962371534639103531, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+  m_PrefabInstance: {fileID: 2121962513}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad8dafd9ceb55134a974c46b2edab457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1452428157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,6 +1604,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1062865331}
     m_Modifications:
+    - target: {fileID: 13995711496686666, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13995711496686666, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13995711496686666, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1442266896}
+    - target: {fileID: 13995711496686666, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 13995711496686666, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Buy
+      objectReference: {fileID: 0}
+    - target: {fileID: 13995711496686666, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StockUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 13995711496686666, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1064305014343672057, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1617,6 +1723,34 @@ PrefabInstance:
     - target: {fileID: 1180837201133339667, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754271694122216178, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754271694122216178, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754271694122216178, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1442266896}
+    - target: {fileID: 4754271694122216178, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754271694122216178, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Sell
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754271694122216178, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StockUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754271694122216178, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5962371534639103531, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
       propertyPath: stockNumber
@@ -1720,25 +1854,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1180837201133339667, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1180837201133339667, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1180837201133339667, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7564000882028778123, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
       propertyPath: m_Name
       value: StockLayout
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 8731070443241270583, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0e7c13b6b7e9e244a39b8189e58e373, type: 3}
