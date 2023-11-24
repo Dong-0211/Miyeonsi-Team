@@ -12,6 +12,7 @@ public class ManagerStock
     [SerializeField] public float increacePricePercent;
     [SerializeField] public int increaceWidth;
     [SerializeField] public int decreaceWidth;
+    [SerializeField] public int holdingValue;
 
 }
 
