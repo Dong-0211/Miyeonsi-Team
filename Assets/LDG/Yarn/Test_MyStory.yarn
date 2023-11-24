@@ -1,21 +1,28 @@
 ﻿title: Start
 tags:
 ---
-Narrator: Oh, hello!
-    -> Hi, where am I?
-        Narrator: You're in Unity!
-            -> Oh.
-            <<jump Oh>>
-            -> How did I get here?
-            <<jump Unity>>
+
+이동규: 안녕하세요
+    -> 장진호: 안녕!
+        <<jump Hello>>
+    -> 장진호: 안녕못하는데
+        <<jump NotHello>>
+
 ===
 
-title: Oh
+title: Hello
 ---
-Narrator: Yeah, fun, right?
+이동규: 유니티 정말 재미있지?
+    -> 장진호: 아니요
+        <<jump Last>>
 ===
 
-title: Unity
+title: Last
 ---
-Narrator: Someone read the Beginner's Guide!
+이동규: 어쩌라고
+===
+
+title: NotHello
+---
+이동규: 힝
 ===
