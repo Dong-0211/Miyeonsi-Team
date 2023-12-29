@@ -2,11 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum TimeNotation
+{
+    Am,
+    Pm,
+    Night
+}
+
 public class GameManager : MonoBehaviour
 {
     public AbilityManager data;
-
+    
     private static GameManager instance;
+
+    [SerializeField] TimeNotation currentTime = TimeNotation.Am;
 
     private void Awake()
     {
@@ -33,8 +42,34 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.Return))
+        {
+            NextTime();
+        }
+    }
+
     public void InitGame()
     {
         
+    }
+
+    public void NextTime()
+    {
+        if (currentTime == TimeNotation.Am)
+        {
+            currentTime = TimeNotation.Pm;
+        }
+        else if (currentTime == TimeNotation.Pm)
+        {
+            currentTime = TimeNotation.Night;
+        }
+        else if(currentTime == TimeNotation.Night)
+        {
+            currentTime = TimeNotation.Am;
+            data.abilities.DateCalculation();
+            StockManager.Instance.stock.change += 1;
+        }
     }
 }
