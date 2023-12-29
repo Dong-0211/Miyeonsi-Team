@@ -3,11 +3,12 @@ using UnityEngine.UI;
 
 public class PlayerMoney : MonoBehaviour
 {
-    [SerializeField] private int money;
-    public int Money { get =>  money; set { money = value;} }
-
     public Text currentMoney;
 
+    private void Awake()
+    {
+        
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,6 @@ public class PlayerMoney : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentMoney.text = "Money : " + money.ToString();
+        currentMoney.text = "Money : " + GameManager.Instance.data.abilities.Money.ToString();
     }
 }
