@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class StockUI : MonoBehaviour
 {
-    Stock stock;
-    PlayerMoney player;
+    private Stock stock;
     public int stockNumber;
 
     public Image StockLog;
@@ -23,10 +22,12 @@ public class StockUI : MonoBehaviour
     private float sumPrice;
     private float sumPercent;
 
+    private Ability Data;
+
     private void Awake()
     {
         stock = Resources.Load<Stock>("ScriptableObject/Stocks");
-        player = FindObjectOfType<PlayerMoney>();
+        Data = GameManager.Instance.data.abilities;
     }
 
     // Start is called before the first frame update
@@ -38,10 +39,10 @@ public class StockUI : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        if(stock.change != 0)
         {
             ChangePrice();
-
+            stock.change -= 1;
         }
     }
 
@@ -100,9 +101,9 @@ public class StockUI : MonoBehaviour
 
     public void Buy()
     {
-        if(player.Money > current)
+        if(Data.Money > current)
         {
-            player.Money = player.Money - current;
+            Data.Money = Data.Money - current;
             stock.Stocks[stockNumber].holdingValue++;
             myAveragePrice = CalculationAverage();
             
@@ -134,7 +135,7 @@ public class StockUI : MonoBehaviour
     {
         if(stock.Stocks[stockNumber].holdingValue > 0)
         {
-            player.Money += current;
+            Data.Money += current;
             --stock.Stocks[stockNumber].holdingValue;
             if (stock.Stocks[stockNumber].holdingValue == 0)
             {
