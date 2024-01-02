@@ -5,14 +5,21 @@ using UnityEngine;
 [System.Serializable]
 public class Ability
 {
+    //health, stress, appearance, morality, intelligence, luck, money, likeAbility_A, likeAbility_B, month, day
     [SerializeField] private uint health;
     public uint Health { get { return health; } set { health = value; } }
     [SerializeField] private uint stress;
+    public uint Stress { get { return stress; } set { stress = value; } }
     [SerializeField] private uint appearance;
+    public uint Appearance { get { return appearance; } }
     [SerializeField] private uint sociAbility;
-    [SerializeField] private uint morAlity;
-    [SerializeField] private uint Intelligence;
+    public uint SociAbility { get {  return sociAbility; } set {  sociAbility = value; } }
+    [SerializeField] private uint morality;
+    public uint Morality { get {  return morality; } set {  morality = value; } }
+    [SerializeField] private uint intelligence;
+    public uint Intelligence { get { return intelligence; } set { intelligence = value; } }
     [SerializeField] private uint luck;
+    public uint Luck { get {  return luck; } set {  luck = value; } }
 
     [SerializeField] private float money;
     public  float Money { get { return money; } set { money = value; } }

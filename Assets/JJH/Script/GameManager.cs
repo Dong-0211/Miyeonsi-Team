@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
         {
             currentTime = TimeNotation.Am;
             data.abilities.DateCalculation();
-            StockManager.Instance.stock.change += 1;
+            StockManager.Instance.stock.upDate += 1;
         }
     }
 }
