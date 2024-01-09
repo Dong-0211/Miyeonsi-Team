@@ -62,23 +62,4 @@ public class Calendar_Manager : MonoBehaviour
 
         Debug.Log(Today.ToString());
     }
-
-    public void Test_event()
-    {
-        tmp_to_do = Instantiate(To_do);
-        tmp_to_do.transform.parent = this.transform;
-        tmp_to_do.GetComponent<Image>().color = new Color(1.0f, 0.0627f, 0.0627f, 1.0f);
-        tmpRectTransform = tmp_to_do.GetComponent<RectTransform>();
-
-        RectTransform originalRectTransform = To_do.GetComponent<RectTransform>();
-
-        tmpRectTransform.sizeDelta = originalRectTransform.sizeDelta;
-        tmpRectTransform.anchoredPosition = originalRectTransform.anchoredPosition;
-        tmpRectTransform.anchorMin = originalRectTransform.anchorMin;
-        tmpRectTransform.anchorMax = originalRectTransform.anchorMax;
-        tmpRectTransform.pivot = originalRectTransform.pivot;
-
-        
-    }
-
 }
