@@ -19,6 +19,7 @@ public class ManagerStock
 [CreateAssetMenu(fileName = "Stock", menuName = "Stock/StockValue")]
 public class Stock : ScriptableObject
 {
+
     public List<ManagerStock> Stocks = new List<ManagerStock>();
     public int upDate = 0;
 }
