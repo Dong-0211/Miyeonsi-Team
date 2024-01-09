@@ -20,5 +20,5 @@ public class ManagerStock
 public class Stock : ScriptableObject
 {
     public List<ManagerStock> Stocks = new List<ManagerStock>();
-    public int change = 0;
+    public int upDate = 0;
 }

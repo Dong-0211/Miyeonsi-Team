@@ -5,29 +5,36 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
+[System.Serializable]
 public class Calendar_Manager : MonoBehaviour
 {
     [SerializeField] GameObject First_Background;
     [SerializeField] GameObject Second_Background;
+    [SerializeField] GameObject PartTimeJob_Square;
+    [SerializeField] GameObject tmp_to_do;
     [SerializeField] Text Month;
     [SerializeField] Text Day;
     [SerializeField] GameObject To_do;
+    [SerializeField] RectTransform tmpRectTransform;
+
+
+    [SerializeField] DateTime Today;
+
     void Start()
     {
         First_Background = this.transform.GetChild(0).gameObject;
         Second_Background = First_Background.transform.GetChild(3).gameObject;
-        if (First_Background == null || Second_Background == null) 
+        PartTimeJob_Square = Second_Background.transform.GetChild(0).gameObject;
+        if (First_Background == null || Second_Background == null || PartTimeJob_Square == null)  
         {
             Debug.Log("캘린더 버그발생!");
             return;
         }
-        Transform PartTimeJob_Square = Second_Background.transform.GetChild(0);
-        To_do = PartTimeJob_Square.transform.GetChild(0).gameObject;
-    }
 
-    void Update()
-    {
-        
+        To_do = PartTimeJob_Square.transform.GetChild(0).gameObject;
+
+        Month = First_Background.transform.GetChild(1).gameObject.GetComponent<Text>();
+
     }
 
     public void RightSide_On()
@@ -49,11 +56,29 @@ public class Calendar_Manager : MonoBehaviour
     public void Open_Calendar()
     {
         if (First_Background.activeSelf == false) { First_Background.SetActive(true); }
+        //Month.text = GameManager.Instance.data.abilities.Month.ToString() + " 월";
+
+        Today = DateTime.Now;
+
+        Debug.Log(Today.ToString());
     }
 
     public void Test_event()
     {
-        GameObject tmp_to_do = Instantiate(To_do);
+        tmp_to_do = Instantiate(To_do);
+        tmp_to_do.transform.parent = this.transform;
+        tmp_to_do.GetComponent<Image>().color = new Color(1.0f, 0.0627f, 0.0627f, 1.0f);
+        tmpRectTransform = tmp_to_do.GetComponent<RectTransform>();
+
+        RectTransform originalRectTransform = To_do.GetComponent<RectTransform>();
+
+        tmpRectTransform.sizeDelta = originalRectTransform.sizeDelta;
+        tmpRectTransform.anchoredPosition = originalRectTransform.anchoredPosition;
+        tmpRectTransform.anchorMin = originalRectTransform.anchorMin;
+        tmpRectTransform.anchorMax = originalRectTransform.anchorMax;
+        tmpRectTransform.pivot = originalRectTransform.pivot;
+
+        
     }
 
 }

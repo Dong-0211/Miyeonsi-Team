@@ -39,10 +39,10 @@ public class StockUI : MonoBehaviour
 
     void Update()
     {
-        if(stock.change != 0)
+        if(stock.upDate != 0)
         {
             ChangePrice();
-            stock.change -= 1;
+            stock.upDate -= 1;
         }
     }
 
