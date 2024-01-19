@@ -10,6 +10,7 @@ public class MypcManager : MonoBehaviour
     [SerializeField] private Text appearance;
     [SerializeField] private Text sociAbility;
     [SerializeField] private Text morality;
+    [SerializeField] private Text sensitivity;
     [SerializeField] private Text intelligence;
     [SerializeField] private Text luck;
 
@@ -21,6 +22,7 @@ public class MypcManager : MonoBehaviour
         appearance.text = "appearance : " + GameManager.Instance.data.abilities.Appearance.ToString();
         sociAbility.text = "sociAbility : " + GameManager.Instance.data.abilities.SociAbility.ToString();
         morality.text = "morality : " + GameManager.Instance.data.abilities.Morality.ToString();
+        sensitivity.text = "sensitivity : " + GameManager.Instance.data.abilities.Sensitivity.ToString();
         intelligence.text = "intelligence : " + GameManager.Instance.data.abilities.Intelligence.ToString();
         luck.text = "Luck : " + GameManager.Instance.data.abilities.Luck.ToString();
     }
