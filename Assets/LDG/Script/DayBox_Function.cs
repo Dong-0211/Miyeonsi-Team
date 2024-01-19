@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class DayBox_Function : MonoBehaviour
 {
-    public Vector2 To_do_Pos;
+    RaycastHit Hit;
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Update()
     {
-        if(collision.transform.tag == "Work")
-        {
-            Debug.Log("잘 들어오네연");
-        }
-        Debug.Log("Collision detected with: " + collision.gameObject.name);
+        
     }
 }

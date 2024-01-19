@@ -16,6 +16,8 @@ public class Ability
     public uint SociAbility { get {  return sociAbility; } set {  sociAbility = value; } }
     [SerializeField] private uint morality;
     public uint Morality { get {  return morality; } set {  morality = value; } }
+    [SerializeField] private uint sensitivity;
+    public uint Sensitivity { get {  return sensitivity; } set {  sensitivity = value; } }
     [SerializeField] private uint intelligence;
     public uint Intelligence { get { return intelligence; } set { intelligence = value; } }
     [SerializeField] private uint luck;
@@ -57,8 +59,16 @@ public class Ability
     }
 }
 
+[System.Serializable]
+public class Inventory
+{
+    public int itemCode;
+    public int itemCount;
+}
+
 [CreateAssetMenu(fileName = "Data", menuName = "Game/GameData")]
 public class AbilityManager : ScriptableObject
 {
-   public Ability abilities = new Ability();
+    public Ability abilities = new Ability();
+    public List<Inventory> inventory = new List<Inventory>();
 }
