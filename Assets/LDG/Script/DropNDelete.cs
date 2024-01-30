@@ -1,15 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class DropNDelete : MonoBehaviour
+public class DropNDelete : MonoBehaviour, IPointerClickHandler
 {
-    private void Update()
+    public void OnPointerClick(PointerEventData eventData)
     {
-        if (Input.GetMouseButtonUp(1))
+        if (eventData.button == PointerEventData.InputButton.Right)
         {
             Destroy(this.gameObject);
+            Debug.Log("삭제!");
         }
     }
+
+    //void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
+    //{
+
+
+    //    if (eventData.button == PointerEventData.InputButton.Right)
+    //    {
+    //        Destroy(this.gameObject);
+    //        Debug.Log("삭제!");
+    //    }
+    //}
 
 }
