@@ -16,14 +16,13 @@ public class Calendar_Manager : MonoBehaviour
     [SerializeField] Text Day;
     [SerializeField] GameObject To_do;
     [SerializeField] RectTransform tmpRectTransform;
-
-
     [SerializeField] DateTime Today;
+    [SerializeField] Vector3 Start_Pos; // Second_Background 의 시작위치
 
     void Start()
     {
-        First_Background = this.transform.GetChild(0).gameObject;
-        Second_Background = First_Background.transform.GetChild(3).gameObject;
+        First_Background = this.transform.GetChild(1).gameObject;
+        Second_Background = this.transform.GetChild(0).gameObject;
         PartTimeJob_Square = Second_Background.transform.GetChild(0).gameObject;
         if (First_Background == null || Second_Background == null || PartTimeJob_Square == null)  
         {
@@ -35,27 +34,27 @@ public class Calendar_Manager : MonoBehaviour
 
         Month = First_Background.transform.GetChild(1).gameObject.GetComponent<Text>();
 
-    }
+        Start_Pos = Second_Background.transform.localPosition;
 
-    public void RightSide_On()
-    {
-        if (Second_Background != null && Second_Background.activeSelf == false) { Second_Background.SetActive(true); }
-        else if (Second_Background.activeSelf == true) { Second_Background.SetActive(false); }
-        else { return; }
     }
 
     public void Close_Calendar()
     {
         if (First_Background.activeSelf == true) 
         {
+            Second_Background.transform.localPosition = Start_Pos;
             Second_Background.SetActive(false);
-            First_Background.SetActive(false); 
+            First_Background.SetActive(false);
         }
     }
 
     public void Open_Calendar()
     {
-        if (First_Background.activeSelf == false) { First_Background.SetActive(true); }
+        if (First_Background.activeSelf == false) 
+        { 
+            First_Background.SetActive(true);
+            Second_Background.SetActive(true);
+        }
         //Month.text = GameManager.Instance.data.abilities.Month.ToString() + " 월";
 
         Today = DateTime.Now;
