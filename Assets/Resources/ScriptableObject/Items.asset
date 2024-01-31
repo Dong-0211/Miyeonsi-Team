@@ -16,9 +16,36 @@ MonoBehaviour:
   - itemName: IncreasedIntelligence
     price: 2000
     itemImage: {fileID: 21300000, guid: ace865c51b1711b49ba0815b73390556, type: 3}
+    itemCode: 0
   - itemName: IncreasedLuck
     price: 5000
     itemImage: {fileID: 21300000, guid: ea00d5919351e204c8810cb8d58e9a29, type: 3}
+    itemCode: 1
   - itemName: Test
     price: 20000
     itemImage: {fileID: 21300000, guid: 1cc95699ea8f59440bfccff9f739f681, type: 3}
+    itemCode: 2
+  - itemName: Test
+    price: 20000
+    itemImage: {fileID: 21300000, guid: 1cc95699ea8f59440bfccff9f739f681, type: 3}
+    itemCode: 3
+  - itemName: Test
+    price: 20000
+    itemImage: {fileID: 21300000, guid: 1cc95699ea8f59440bfccff9f739f681, type: 3}
+    itemCode: 4
+  - itemName: Test
+    price: 20000
+    itemImage: {fileID: 21300000, guid: 1cc95699ea8f59440bfccff9f739f681, type: 3}
+    itemCode: 5
+  - itemName: Test
+    price: 20000
+    itemImage: {fileID: 21300000, guid: 1cc95699ea8f59440bfccff9f739f681, type: 3}
+    itemCode: 6
+  - itemName: Test
+    price: 20000
+    itemImage: {fileID: 21300000, guid: 1cc95699ea8f59440bfccff9f739f681, type: 3}
+    itemCode: 7
+  - itemName: Test
+    price: 20000
+    itemImage: {fileID: 21300000, guid: 1cc95699ea8f59440bfccff9f739f681, type: 3}
+    itemCode: 5
