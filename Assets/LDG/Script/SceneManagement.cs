@@ -61,4 +61,9 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.LoadScene("Story_Scene");
     }
+
+    public void StoreScenesMove()
+    {
+        SceneManager.LoadScene("Store_Scene");
+    }
 }
