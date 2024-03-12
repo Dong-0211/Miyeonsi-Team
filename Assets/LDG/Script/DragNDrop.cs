@@ -10,9 +10,13 @@ public class DragNDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
     [SerializeField] Vector3 Current_Pos;
     [SerializeField] GameObject Copy_To_Do;
     [SerializeField] GameObject Work1;
+    [SerializeField] GameObject Final_Work;
     [SerializeField] RectTransform mRectTransform;
     [SerializeField] bool Drop_F;
-    
+    [SerializeField] string Click_Work_Name;
+    [SerializeField] string Drop_Box_Name;
+
+
     DayBox_Function DayBox_Function;
 
     Ray ray;
@@ -22,7 +26,6 @@ public class DragNDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 
     void Start()
     {
-        Work1 = Resources.Load<GameObject>("Prefab/Work1");
         mRectTransform = GetComponent<RectTransform>();
     }
 
@@ -36,11 +39,23 @@ public class DragNDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
             if (Physics.Raycast(ray, out hit))
             {
                 RectTransform Hit_rectTransform = hit.collider.gameObject.GetComponent<RectTransform>();
+                Debug.Log("부딪친 옵젝이름 : " + hit.collider.gameObject.name);
+                Drop_Box_Name = hit.collider.gameObject.name;
+
+                //if (Set_Work(Drop_Box_Name) == true)
+                //{
+
+                //}
+
                 mRectTransform.SetParent(Hit_rectTransform.parent.transform);
                 mRectTransform.anchoredPosition = Hit_rectTransform.anchoredPosition;
                 mRectTransform.sizeDelta = Hit_rectTransform.sizeDelta;
 
-                mRectTransform.GetChild(0).gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(Hit_rectTransform.anchoredPosition.x, 0.0f);
+                mRectTransform.GetChild(0).gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0.0f, 0.0f);
+                mRectTransform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(104.0f, 26.0f);
+
+                //this.GetComponent<DragNDrop>().enabled = false;
+                Destroy(this.GetComponent<DragNDrop>());
             }
             else
             {
@@ -52,11 +67,16 @@ public class DragNDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         
     }
 
+
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
-        if(eventData.button == PointerEventData.InputButton.Left)
+        if (eventData.button == PointerEventData.InputButton.Left)
         {
-            Copy_To_Do = Instantiate(Work1);
+            Click_Work_Name = eventData.pointerDrag.name;
+            //Debug.Log("클릭한 이름은 : " + Click_Work_Name);
+            GameObject final_Work = Resources.Load<GameObject>("Prefab/" + Click_Work_Name);
+
+            Copy_To_Do = Instantiate(final_Work);
             if (Copy_To_Do.GetComponent<DragNDrop>().Drop_F == false)
             {
                 Drop_F = Copy_To_Do.GetComponent<DragNDrop>().Drop_F;
@@ -100,11 +120,10 @@ public class DragNDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             Copy_To_Do.transform.position = Current_Pos;
-            //DayBox_Function.To_do_Pos = Current_Pos;
             Copy_To_Do.GetComponent<DragNDrop>().Drop_F = true;
             Copy_To_Do.AddComponent<DropNDelete>();
-            Destroy(Copy_To_Do.transform.GetChild(1).gameObject);
-            Debug.Log("클릭 끝!");
+            Copy_To_Do.GetComponent<BoxCollider2D>().size = new Vector2(95.0f, 26.0f); 
+            //Debug.Log("클릭 끝!");
         }
         else if (eventData.button == PointerEventData.InputButton.Middle)
         {
@@ -115,6 +134,22 @@ public class DragNDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         {
             Debug.Log("안됨2!");
             return;
+        }
+    }
+
+    bool Set_Work(string Hit_box)
+    {
+        if (Hit_box == "Box1")
+        {
+            if(Click_Work_Name== "Convenience_Work")
+            {
+
+            }
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }
