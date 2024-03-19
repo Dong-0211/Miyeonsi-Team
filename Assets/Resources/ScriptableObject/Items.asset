@@ -21,19 +21,35 @@ MonoBehaviour:
     price: 5000
     itemImage: {fileID: 21300000, guid: ea00d5919351e204c8810cb8d58e9a29, type: 3}
     itemCode: 1
-  - itemName: Test
+  - itemName: Test2
     price: 20000
     itemImage: {fileID: 21300000, guid: 1cc95699ea8f59440bfccff9f739f681, type: 3}
     itemCode: 2
-  - itemName: Test
+  - itemName: Test3
     price: 20000
     itemImage: {fileID: 21300000, guid: 1cc95699ea8f59440bfccff9f739f681, type: 3}
     itemCode: 3
-  - itemName: Test
+  - itemName: Test4
     price: 20000
     itemImage: {fileID: 21300000, guid: 1cc95699ea8f59440bfccff9f739f681, type: 3}
     itemCode: 4
-  - itemName: Test
+  - itemName: Test5
     price: 20000
     itemImage: {fileID: 21300000, guid: 1cc95699ea8f59440bfccff9f739f681, type: 3}
     itemCode: 5
+  - itemName: Test6
+    price: 20000
+    itemImage: {fileID: 21300000, guid: 1cc95699ea8f59440bfccff9f739f681, type: 3}
+    itemCode: 6
+  - itemName: Test7
+    price: 20000
+    itemImage: {fileID: 21300000, guid: 1cc95699ea8f59440bfccff9f739f681, type: 3}
+    itemCode: 7
+  - itemName: Test8
+    price: 20000
+    itemImage: {fileID: 21300000, guid: 1cc95699ea8f59440bfccff9f739f681, type: 3}
+    itemCode: 8
+  - itemName: Test9
+    price: 20000
+    itemImage: {fileID: 21300000, guid: 1cc95699ea8f59440bfccff9f739f681, type: 3}
+    itemCode: 9

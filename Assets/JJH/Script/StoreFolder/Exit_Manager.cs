@@ -16,15 +16,20 @@ public class Exit_Manager : MonoBehaviour
         if(Exit_Window.alpha == 1.0f)
         {
             Exit_Window.alpha = 0.0f;
+            Exit_Window.interactable = false;
+            Exit_Window.blocksRaycasts = false;
             return;
         }
         Exit_Window.alpha = 1.0f;
+        Exit_Window.interactable = true;
+        Exit_Window.blocksRaycasts = true;
     }
 
     public void Window_Off()
     {
         Exit_Window.alpha = 0.0f;
-
+        Exit_Window.interactable = false;
+        Exit_Window.blocksRaycasts = false;
     }
 
 }
