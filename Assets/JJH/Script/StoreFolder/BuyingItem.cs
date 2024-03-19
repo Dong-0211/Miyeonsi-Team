@@ -5,6 +5,15 @@ using UnityEngine.UI;
 
 public class BuyingItem : MonoBehaviour
 {
+    private StoreManager Item;
+
+    private void Awake()
+    {
+        Item = FindObjectOfType<StoreManager>();
+        //int number = Item.CurrentItem[1];
+    }
+
+    //아이템 코드인 Item.currentItem의 배열을 들고와서 현재 상점 아이템 파악
     public void BuyItem()
     {
         string itemName = this.gameObject.name;
