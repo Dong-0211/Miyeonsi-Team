@@ -16,17 +16,15 @@ public class DragNDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
     [SerializeField] string Click_Work_Name;
     [SerializeField] string Drop_Box_Name;
 
-
-    DayBox_Function DayBox_Function;
-
     Ray ray;
     RaycastHit hit;
 
-    [SerializeField] float RaySize =100.0f;
+    [SerializeField] float RaySize = 100.0f;
 
     void Start()
     {
         mRectTransform = GetComponent<RectTransform>();
+        Click_Work_Name = this.gameObject.name;
     }
 
     void Update()
@@ -34,22 +32,15 @@ public class DragNDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         ray = new Ray(transform.position, transform.forward * RaySize);
         Debug.DrawRay(transform.position, transform.forward * RaySize, Color.yellow);
 
-        if (Drop_F)
+        if (Drop_F == true) 
         {
             if (Physics.Raycast(ray, out hit))
             {
                 RectTransform Hit_rectTransform = hit.collider.gameObject.GetComponent<RectTransform>();
-                Debug.Log("부딪친 옵젝이름 : " + hit.collider.gameObject.name);
+                //Debug.Log("부딪친 옵젝이름 : " + hit.collider.gameObject.name);
                 Drop_Box_Name = hit.collider.gameObject.name;
 
-                //if (Set_Work(Drop_Box_Name) == true)
-                //{
-
-                //}
-
-                mRectTransform.SetParent(Hit_rectTransform.parent.transform);
-                mRectTransform.anchoredPosition = Hit_rectTransform.anchoredPosition;
-                mRectTransform.sizeDelta = Hit_rectTransform.sizeDelta;
+                Set_Work(Drop_Box_Name, Hit_rectTransform);
 
                 mRectTransform.GetChild(0).gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0.0f, 0.0f);
                 mRectTransform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(104.0f, 26.0f);
@@ -63,8 +54,6 @@ public class DragNDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
                 Destroy(this.gameObject);
             }
         }
-
-        
     }
 
 
@@ -123,7 +112,6 @@ public class DragNDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
             Copy_To_Do.GetComponent<DragNDrop>().Drop_F = true;
             Copy_To_Do.AddComponent<DropNDelete>();
             Copy_To_Do.GetComponent<BoxCollider2D>().size = new Vector2(95.0f, 26.0f); 
-            //Debug.Log("클릭 끝!");
         }
         else if (eventData.button == PointerEventData.InputButton.Middle)
         {
@@ -137,19 +125,47 @@ public class DragNDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         }
     }
 
-    bool Set_Work(string Hit_box)
+    void Set_Work(string Hit_box, RectTransform hitRect)
     {
-        if (Hit_box == "Box1")
+        //if (hitRect.parent.childCount > 3)
+        //{
+        //    Debug.Log("응 안돼 돌아갈!!!!!!!!!!!!!!!!");
+        //    Destroy(this.gameObject);
+        //}
+        if (Hit_box == "Box1" && Click_Work_Name == "Convenience_Work(Clone)")
         {
-            if(Click_Work_Name== "Convenience_Work")
-            {
-
-            }
-            return true;
+            mRectTransform.SetParent(hitRect.transform);
+            mRectTransform.anchoredPosition = new Vector2( 59.0f, 0.0f);
+            mRectTransform.sizeDelta = new Vector2(213.0f, hitRect.sizeDelta.y);
+        }
+        else if (Hit_box == "Box2" && Click_Work_Name == "PC_Work(Clone)")
+        {
+            mRectTransform.SetParent(hitRect.transform);
+            mRectTransform.anchoredPosition = new Vector2(0.0f, -13.8f);
+            mRectTransform.sizeDelta = new Vector2(hitRect.sizeDelta.x, 53.5f);
+        }
+        else if (Hit_box == "Box2" && Click_Work_Name == "LAU_Work(Clone)")
+        {
+            mRectTransform.SetParent(hitRect.transform);
+            mRectTransform.anchoredPosition = new Vector2(0.0f, 0.0f);
+            mRectTransform.sizeDelta = hitRect.sizeDelta;
+        }
+        else if (Hit_box == "Box3" && Click_Work_Name == "Movie_Work(Clone)") 
+        {
+            mRectTransform.SetParent(hitRect.transform);
+            mRectTransform.anchoredPosition = new Vector2(59.0f, 0.0f);
+            mRectTransform.sizeDelta = new Vector2(213.0f, hitRect.sizeDelta.y);
+        }
+        else if(Hit_box == "Box1" && Click_Work_Name == "FoodDelivery_Work(Clone)")
+        {
+            mRectTransform.SetParent(hitRect.transform);
+            mRectTransform.anchoredPosition = new Vector2(0.0f, 0.0f);
+            mRectTransform.sizeDelta = hitRect.sizeDelta;
         }
         else
         {
-            return false;
+            Debug.Log("응 안돼 돌아가22");
+            Destroy(this.gameObject);
         }
     }
 }
