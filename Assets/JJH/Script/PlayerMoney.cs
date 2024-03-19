@@ -1,9 +1,10 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerMoney : MonoBehaviour
 {
-    public Text currentMoney;
+    public TextMeshProUGUI currentMoney;
 
     private void Awake()
     {
@@ -18,6 +19,6 @@ public class PlayerMoney : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentMoney.text = "Money : " + GameManager.Instance.data.abilities.Money.ToString();
+        currentMoney.text = GameManager.Instance.data.abilities.Money.ToString();
     }
 }
