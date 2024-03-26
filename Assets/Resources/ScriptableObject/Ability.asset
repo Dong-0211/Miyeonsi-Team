@@ -21,25 +21,25 @@ MonoBehaviour:
     sensitivity: 0
     intelligence: 0
     luck: 5
-    money: 33491
+    money: 2855100
     likeAbility_A: 0
     likeAbility_B: 0
     month: 2
     day: 11
   inventory:
   - itemCode: 0
-    itemCount: 2
+    itemCount: 8
   - itemCode: 1
-    itemCount: 4
+    itemCount: 16
   - itemCode: 6
     itemCount: 1
   - itemCode: 3
-    itemCount: 1
+    itemCount: 4
   - itemCode: 4
-    itemCount: 1
-  - itemCode: 63
-    itemCount: 0
-  - itemCode: 63
-    itemCount: 0
-  - itemCode: 63
-    itemCount: 0
+    itemCount: 4
+  - itemCode: 2
+    itemCount: 6
+  - itemCode: 5
+    itemCount: 3
+  - itemCode: 9
+    itemCount: 4

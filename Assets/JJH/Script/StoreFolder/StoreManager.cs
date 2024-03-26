@@ -51,4 +51,11 @@ public class StoreManager : MonoBehaviour
             }
         }
     }
+
+    public void SoldOut(int ItemNumber)
+    {
+        Debug.Log("SoldOut");
+        Slot[ItemNumber].transform.Find("BuyButton").Find("ItemPrice").GetComponent<Text>().text = "¸ÅÁø";
+
+    }
 }
